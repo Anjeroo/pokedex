@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from "react";
+import './pokemonList.css'
 
 interface Pokemon {
   name: string;
@@ -8,15 +9,15 @@ interface Pokemon {
 
 function PokemonList() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  
+
   useLayoutEffect(() => {
     async function fetchPokemons() {
       await fetch("https://pokeapi.co/api/v2/pokemon/")
         .then((response) => response.json())
         .then(async (data) => {
-         return await Promise.all(
+          return await Promise.all(
             data.results.map(async (pokemon) =>
-             await fetch(pokemon.url)
+              await fetch(pokemon.url)
                 .then((response) => response.json())
                 .then((data) => ({
                   name: data.name,
@@ -36,11 +37,20 @@ function PokemonList() {
 
   console.log(pokemons);
 
+
   return (
-    <ul>
+    <ul className="pokemonList">
       {pokemons.map((pokemon) => (
-        <li key={pokemon.name}>
-          {pokemon.name} {pokemon.types} <img src={pokemon.img} />
+        <li key={pokemon.name} className="pokemonCard">
+         <h1 className="pokemonName">{pokemon.name}</h1> 
+          <img src={pokemon.img} />
+          <div className="typeOrganization">
+            {pokemon.types.map((type) => (
+              <div key={`${pokemon.name}-${type}`} className={`${type}`} >
+                {type}
+              </div>
+            ))}
+          </div>
         </li>
       ))}
     </ul>
