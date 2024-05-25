@@ -5,6 +5,7 @@ interface Pokemon {
   name: string;
   types: string[];
   img: string;
+  number: number;
 }
 
 function PokemonList() {
@@ -12,7 +13,7 @@ function PokemonList() {
 
   useLayoutEffect(() => {
     async function fetchPokemons() {
-      await fetch("https://pokeapi.co/api/v2/pokemon/")
+      await fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
         .then((response) => response.json())
         .then(async (data) => {
           return await Promise.all(
@@ -23,6 +24,7 @@ function PokemonList() {
                   name: data.name,
                   types: data.types.map(type => type.type.name),
                   img: data.sprites.other["official-artwork"].front_default,
+                  number: data.id,
                 }))
             )
           ).then((pokemons) => setPokemons(pokemons));
@@ -43,6 +45,7 @@ function PokemonList() {
       {pokemons.map((pokemon) => (
         <li key={pokemon.name} className="pokemonCard">
          <h1 className="pokemonName">{pokemon.name}</h1> 
+         <p className="pokemonId">#{(Array(4).join("0")+pokemon.number).slice(-4)}</p>
           <img src={pokemon.img} />
           <div className="typeOrganization">
             {pokemon.types.map((type) => (

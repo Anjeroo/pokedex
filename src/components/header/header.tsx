@@ -1,4 +1,7 @@
+import { useState } from 'react'
 import './header.css'
+
+
 
 export function Header() {
     return (
@@ -9,7 +12,7 @@ export function Header() {
                 <h1 className='title2'>Pokedex</h1>
             </div>
             <div className='search'>
-                <input className='txtBusca' type="text" placeholder='Search' />
+                <input  className='txtBusca' type="text" placeholder='Search'/>     
             </div>
         </header>
     )

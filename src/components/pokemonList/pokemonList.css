@@ -96,9 +96,90 @@
     color: white;
 }
 
+.electric {
+    display: flex;
+    justify-content: center;
+    background-color: yellow;
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: black;
+}
+
+.ground {
+    display: flex;
+    justify-content: center;
+    background-color: burlywood;
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: black;
+}
+
+.fairy {
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: black;
+}
+
+.fighting {
+    display: flex;
+    justify-content: center;
+    background-color: orangered;
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: white;
+}
+
+.psychic {
+    display: flex;
+    justify-content: center;
+    background-color: purple;
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: white;
+}
+
+.rock {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(106, 87, 61);
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: white;
+}
+
+.steel {
+    display: flex;
+    justify-content: center;
+    background-color: slategrey;
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ice {
+    display: flex;
+    justify-content: center;
+    background-color: lightskyblue;
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: black;
+}
+
+.ghost {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(75, 3, 75);
+    padding: 0.5px 30px;
+    border-radius: 6px;
+    color: white;
+}
+
 .typeOrganization {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .pokemonName {
@@ -106,4 +187,15 @@
     text-align: center;
     color: rgb(88, 86, 86);
     margin-block: 0;
+}
+
+.pokemonId {
+    display: flex;
+    font-style: italic;
+    font-weight: 200;
+    background-color: rgb(195, 210, 210);
+    width: 100px;
+    justify-content: center;
+    margin: auto;
+    border-radius: 20px;
 }
