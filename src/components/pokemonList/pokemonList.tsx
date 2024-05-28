@@ -1,62 +1,55 @@
-import { useLayoutEffect, useState } from "react";
+import { useMemo } from "react";
 import './pokemonList.css'
+import { DETAILS_PAGE } from "@constants/routing.constants";
 
-interface Pokemon {
-  name: string;
-  types: string[];
-  img: string;
-  number: number;
-}
+import { usePokemon } from "@contexts/pokemon/pokemon.provider";
+import InfiniteScroll from "@components/infiniteScroll";
 
-function PokemonList() {
-  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+interface PokemonListProps {}
 
-  useLayoutEffect(() => {
-    async function fetchPokemons() {
-      await fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
-        .then((response) => response.json())
-        .then(async (data) => {
-          return await Promise.all(
-            data.results.map(async (pokemon) =>
-              await fetch(pokemon.url)
-                .then((response) => response.json())
-                .then((data) => ({
-                  name: data.name,
-                  types: data.types.map(type => type.type.name),
-                  img: data.sprites.other["official-artwork"].front_default,
-                  number: data.id,
-                }))
-            )
-          ).then((pokemons) => setPokemons(pokemons));
-        })
-        .catch((e) => {
-          console.error(e);
-        });
-    }
+const PokemonList: React.FC<PokemonListProps> = () => {
+  const {
+    state: { isLoading, filteredPokemons, pagination, pokemons },
+    actions: { loadPokemons },
+  } = usePokemon();
 
-    fetchPokemons();
-  }, []);
+  const isInitial = useMemo(() => pokemons.size === 0, [pokemons.size]);
 
-  console.log(pokemons);
+  const onIntersect = () => {
+    if (isLoading) return;
 
+    loadPokemons({
+      limit: pagination.limit,
+      offset: isInitial ? 0 : pagination.offset + pagination.limit,
+    });
+  };
 
   return (
-    <ul className="pokemonList">
-      {pokemons.map((pokemon) => (
-        <li key={pokemon.name} className="pokemonCard">
-         <h1 className="pokemonName">{pokemon.name}</h1> 
-         <p className="pokemonId">#{(Array(4).join("0")+pokemon.number).slice(-4)}</p>
-          <img src={pokemon.img} />
-          <div className="typeOrganization">
-            {pokemon.types.map((type) => (
-              <div key={`${pokemon.name}-${type}`} className={`${type}`} >
-                {type}
-              </div>
-            ))}
-          </div>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h1 id="pokemonListTitle">List Pokemon</h1>
+      <ul className='pokemonList'>
+        {filteredPokemons.map((pokemon) => (
+          <a className="pokemonLink" href={DETAILS_PAGE.path.replace(":name", pokemon.name)}>
+          <li key={pokemon.name} className='pokemonCard'>
+            <h1 className='pokemonName'>{pokemon.name}</h1>
+            <p className='pokemonId'>
+              #{(Array(4).join("0") + pokemon.id).slice(-4)}
+            </p>
+            <img src={pokemon.img} />
+            <div className='typeOrganization'>
+              {pokemon.types.map((type) => (
+                <div key={`${pokemon.name}-${type}`} className={`${type}`}>
+                  {type}
+                </div>
+              ))}
+            </div>
+          </li>
+        </a>
+        ))}
+        <InfiniteScroll onIntersect={onIntersect} />
+      </ul>
+    </div>
   );
-}
+};
+
 export default PokemonList;

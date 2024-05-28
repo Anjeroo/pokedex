@@ -1,20 +1,29 @@
-import { Header } from './components/header/header'
-import PokemonList from './components/pokemonList/pokemonList'
-import './App.css'
+import { PokemonProvider } from "./contexts/pokemon/pokemon.provider";
+
+import "./app.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import ListPage from "@pages/list";
+import DetailsPage from "@pages/details";
+
+import { LIST_PAGE, DETAILS_PAGE } from "@constants/routing.constants";
+
+const router = createBrowserRouter([
+  {
+    ...LIST_PAGE,
+    element: <ListPage />,
+  },
+  {
+    ...DETAILS_PAGE,
+    element: <DetailsPage />,
+  },
+]);
 
 function App() {
-
   return (
-    <>
-      {<div id='container'>
-        <Header/>
-        <div id='pokemonList'>
-        <PokemonList/>
-        </div>
-      </div>}
-      
-    </>
-  )
+    <PokemonProvider>
+      <RouterProvider router={router} />
+    </PokemonProvider>
+  );
 }
 
-export default App
+export default App;

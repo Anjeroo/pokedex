@@ -1,0 +1,2039 @@
+diff --git a/package-lock.json b/package-lock.json
+index 0161b20..59aa807 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -10,14 +10,16 @@
+       "dependencies": {
+         "react": "^18.2.0",
+         "react-dom": "^18.2.0",
+-        "react-hook-form": "^7.51.5"
++        "react-hook-form": "^7.51.5",
++        "react-router-dom": "^6.23.1"
+       },
+       "devDependencies": {
++        "@types/node": "^20.12.12",
+         "@types/react": "^18.2.66",
+         "@types/react-dom": "^18.2.22",
+         "@typescript-eslint/eslint-plugin": "^7.2.0",
+         "@typescript-eslint/parser": "^7.2.0",
+-        "@vitejs/plugin-react": "^4.2.1",
++        "@vitejs/plugin-react-swc": "^3.7.0",
+         "eslint": "^8.57.0",
+         "eslint-plugin-react-hooks": "^4.6.0",
+         "eslint-plugin-react-refresh": "^0.4.6",
+@@ -25,365 +27,6 @@
+         "vite": "^5.2.0"
+       }
+     },
+-    "node_modules/@ampproject/remapping": {
+-      "version": "2.3.0",
+-      "resolved": "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.3.0.tgz",
+-      "integrity": "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==",
+-      "dev": true,
+-      "dependencies": {
+-        "@jridgewell/gen-mapping": "^0.3.5",
+-        "@jridgewell/trace-mapping": "^0.3.24"
+-      },
+-      "engines": {
+-        "node": ">=6.0.0"
+-      }
+-    },
+-    "node_modules/@babel/code-frame": {
+-      "version": "7.24.2",
+-      "resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.24.2.tgz",
+-      "integrity": "sha512-y5+tLQyV8pg3fsiln67BVLD1P13Eg4lh5RW9mF0zUuvLrv9uIQ4MCL+CRT+FTsBlBjcIan6PGsLcBN0m3ClUyQ==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/highlight": "^7.24.2",
+-        "picocolors": "^1.0.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/compat-data": {
+-      "version": "7.24.4",
+-      "resolved": "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.24.4.tgz",
+-      "integrity": "sha512-vg8Gih2MLK+kOkHJp4gBEIkyaIi00jgWot2D9QOmmfLC8jINSOzmCLta6Bvz/JSBCqnegV0L80jhxkol5GWNfQ==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/core": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/core/-/core-7.24.5.tgz",
+-      "integrity": "sha512-tVQRucExLQ02Boi4vdPp49svNGcfL2GhdTCT9aldhXgCJVAI21EtRfBettiuLUwce/7r6bFdgs6JFkcdTiFttA==",
+-      "dev": true,
+-      "dependencies": {
+-        "@ampproject/remapping": "^2.2.0",
+-        "@babel/code-frame": "^7.24.2",
+-        "@babel/generator": "^7.24.5",
+-        "@babel/helper-compilation-targets": "^7.23.6",
+-        "@babel/helper-module-transforms": "^7.24.5",
+-        "@babel/helpers": "^7.24.5",
+-        "@babel/parser": "^7.24.5",
+-        "@babel/template": "^7.24.0",
+-        "@babel/traverse": "^7.24.5",
+-        "@babel/types": "^7.24.5",
+-        "convert-source-map": "^2.0.0",
+-        "debug": "^4.1.0",
+-        "gensync": "^1.0.0-beta.2",
+-        "json5": "^2.2.3",
+-        "semver": "^6.3.1"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      },
+-      "funding": {
+-        "type": "opencollective",
+-        "url": "https://opencollective.com/babel"
+-      }
+-    },
+-    "node_modules/@babel/core/node_modules/semver": {
+-      "version": "6.3.1",
+-      "resolved": "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz",
+-      "integrity": "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==",
+-      "dev": true,
+-      "bin": {
+-        "semver": "bin/semver.js"
+-      }
+-    },
+-    "node_modules/@babel/generator": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/generator/-/generator-7.24.5.tgz",
+-      "integrity": "sha512-x32i4hEXvr+iI0NEoEfDKzlemF8AmtOP8CcrRaEcpzysWuoEb1KknpcvMsHKPONoKZiDuItklgWhB18xEhr9PA==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/types": "^7.24.5",
+-        "@jridgewell/gen-mapping": "^0.3.5",
+-        "@jridgewell/trace-mapping": "^0.3.25",
+-        "jsesc": "^2.5.1"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-compilation-targets": {
+-      "version": "7.23.6",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-compilation-targets/-/helper-compilation-targets-7.23.6.tgz",
+-      "integrity": "sha512-9JB548GZoQVmzrFgp8o7KxdgkTGm6xs9DW0o/Pim72UDjzr5ObUQ6ZzYPqA+g9OTS2bBQoctLJrky0RDCAWRgQ==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/compat-data": "^7.23.5",
+-        "@babel/helper-validator-option": "^7.23.5",
+-        "browserslist": "^4.22.2",
+-        "lru-cache": "^5.1.1",
+-        "semver": "^6.3.1"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-compilation-targets/node_modules/semver": {
+-      "version": "6.3.1",
+-      "resolved": "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz",
+-      "integrity": "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==",
+-      "dev": true,
+-      "bin": {
+-        "semver": "bin/semver.js"
+-      }
+-    },
+-    "node_modules/@babel/helper-environment-visitor": {
+-      "version": "7.22.20",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-environment-visitor/-/helper-environment-visitor-7.22.20.tgz",
+-      "integrity": "sha512-zfedSIzFhat/gFhWfHtgWvlec0nqB9YEIVrpuwjruLlXfUSnA8cJB0miHKwqDnQ7d32aKo2xt88/xZptwxbfhA==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-function-name": {
+-      "version": "7.23.0",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-function-name/-/helper-function-name-7.23.0.tgz",
+-      "integrity": "sha512-OErEqsrxjZTJciZ4Oo+eoZqeW9UIiOcuYKRJA4ZAgV9myA+pOXhhmpfNCKjEH/auVfEYVFJ6y1Tc4r0eIApqiw==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/template": "^7.22.15",
+-        "@babel/types": "^7.23.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-hoist-variables": {
+-      "version": "7.22.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-hoist-variables/-/helper-hoist-variables-7.22.5.tgz",
+-      "integrity": "sha512-wGjk9QZVzvknA6yKIUURb8zY3grXCcOZt+/7Wcy8O2uctxhplmUPkOdlgoNhmdVee2c92JXbf1xpMtVNbfoxRw==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/types": "^7.22.5"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-module-imports": {
+-      "version": "7.24.3",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-module-imports/-/helper-module-imports-7.24.3.tgz",
+-      "integrity": "sha512-viKb0F9f2s0BCS22QSF308z/+1YWKV/76mwt61NBzS5izMzDPwdq1pTrzf+Li3npBWX9KdQbkeCt1jSAM7lZqg==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/types": "^7.24.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-module-transforms": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-module-transforms/-/helper-module-transforms-7.24.5.tgz",
+-      "integrity": "sha512-9GxeY8c2d2mdQUP1Dye0ks3VDyIMS98kt/llQ2nUId8IsWqTF0l1LkSX0/uP7l7MCDrzXS009Hyhe2gzTiGW8A==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/helper-environment-visitor": "^7.22.20",
+-        "@babel/helper-module-imports": "^7.24.3",
+-        "@babel/helper-simple-access": "^7.24.5",
+-        "@babel/helper-split-export-declaration": "^7.24.5",
+-        "@babel/helper-validator-identifier": "^7.24.5"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      },
+-      "peerDependencies": {
+-        "@babel/core": "^7.0.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-plugin-utils": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.24.5.tgz",
+-      "integrity": "sha512-xjNLDopRzW2o6ba0gKbkZq5YWEBaK3PCyTOY1K2P/O07LGMhMqlMXPxwN4S5/RhWuCobT8z0jrlKGlYmeR1OhQ==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-simple-access": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-simple-access/-/helper-simple-access-7.24.5.tgz",
+-      "integrity": "sha512-uH3Hmf5q5n7n8mz7arjUlDOCbttY/DW4DYhE6FUsjKJ/oYC1kQQUvwEQWxRwUpX9qQKRXeqLwWxrqilMrf32sQ==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/types": "^7.24.5"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-split-export-declaration": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.24.5.tgz",
+-      "integrity": "sha512-5CHncttXohrHk8GWOFCcCl4oRD9fKosWlIRgWm4ql9VYioKm52Mk2xsmoohvm7f3JoiLSM5ZgJuRaf5QZZYd3Q==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/types": "^7.24.5"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-string-parser": {
+-      "version": "7.24.1",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.24.1.tgz",
+-      "integrity": "sha512-2ofRCjnnA9y+wk8b9IAREroeUP02KHp431N2mhKniy2yKIDKpbrHv9eXwm8cBeWQYcJmzv5qKCu65P47eCF7CQ==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-validator-identifier": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.24.5.tgz",
+-      "integrity": "sha512-3q93SSKX2TWCG30M2G2kwaKeTYgEUp5Snjuj8qm729SObL6nbtUldAi37qbxkD5gg3xnBio+f9nqpSepGZMvxA==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helper-validator-option": {
+-      "version": "7.23.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helper-validator-option/-/helper-validator-option-7.23.5.tgz",
+-      "integrity": "sha512-85ttAOMLsr53VgXkTbkx8oA6YTfT4q7/HzXSLEYmjcSTJPMPQtvq1BD79Byep5xMUYbGRzEpDsjUf3dyp54IKw==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/helpers": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/helpers/-/helpers-7.24.5.tgz",
+-      "integrity": "sha512-CiQmBMMpMQHwM5m01YnrM6imUG1ebgYJ+fAIW4FZe6m4qHTPaRHti+R8cggAwkdz4oXhtO4/K9JWlh+8hIfR2Q==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/template": "^7.24.0",
+-        "@babel/traverse": "^7.24.5",
+-        "@babel/types": "^7.24.5"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/highlight": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.24.5.tgz",
+-      "integrity": "sha512-8lLmua6AVh/8SLJRRVD6V8p73Hir9w5mJrhE+IPpILG31KKlI9iz5zmBYKcWPS59qSfgP9RaSBQSHHE81WKuEw==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/helper-validator-identifier": "^7.24.5",
+-        "chalk": "^2.4.2",
+-        "js-tokens": "^4.0.0",
+-        "picocolors": "^1.0.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/parser": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.24.5.tgz",
+-      "integrity": "sha512-EOv5IK8arwh3LI47dz1b0tKUb/1uhHAnHJOrjgtQMIpu1uXd9mlFrJg9IUgGUgZ41Ch0K8REPTYpO7B76b4vJg==",
+-      "dev": true,
+-      "bin": {
+-        "parser": "bin/babel-parser.js"
+-      },
+-      "engines": {
+-        "node": ">=6.0.0"
+-      }
+-    },
+-    "node_modules/@babel/plugin-transform-react-jsx-self": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.24.5.tgz",
+-      "integrity": "sha512-RtCJoUO2oYrYwFPtR1/jkoBEcFuI1ae9a9IMxeyAVa3a1Ap4AnxmyIKG2b2FaJKqkidw/0cxRbWN+HOs6ZWd1w==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/helper-plugin-utils": "^7.24.5"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      },
+-      "peerDependencies": {
+-        "@babel/core": "^7.0.0-0"
+-      }
+-    },
+-    "node_modules/@babel/plugin-transform-react-jsx-source": {
+-      "version": "7.24.1",
+-      "resolved": "https://registry.npmjs.org/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.24.1.tgz",
+-      "integrity": "sha512-1v202n7aUq4uXAieRTKcwPzNyphlCuqHHDcdSNc+vdhoTEZcFMh+L5yZuCmGaIO7bs1nJUNfHB89TZyoL48xNA==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/helper-plugin-utils": "^7.24.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      },
+-      "peerDependencies": {
+-        "@babel/core": "^7.0.0-0"
+-      }
+-    },
+-    "node_modules/@babel/template": {
+-      "version": "7.24.0",
+-      "resolved": "https://registry.npmjs.org/@babel/template/-/template-7.24.0.tgz",
+-      "integrity": "sha512-Bkf2q8lMB0AFpX0NFEqSbx1OkTHf0f+0j82mkw+ZpzBnkk7e9Ql0891vlfgi+kHwOk8tQjiQHpqh4LaSa0fKEA==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/code-frame": "^7.23.5",
+-        "@babel/parser": "^7.24.0",
+-        "@babel/types": "^7.24.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/traverse": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/traverse/-/traverse-7.24.5.tgz",
+-      "integrity": "sha512-7aaBLeDQ4zYcUFDUD41lJc1fG8+5IU9DaNSJAgal866FGvmD5EbWQgnEC6kO1gGLsX0esNkfnJSndbTXA3r7UA==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/code-frame": "^7.24.2",
+-        "@babel/generator": "^7.24.5",
+-        "@babel/helper-environment-visitor": "^7.22.20",
+-        "@babel/helper-function-name": "^7.23.0",
+-        "@babel/helper-hoist-variables": "^7.22.5",
+-        "@babel/helper-split-export-declaration": "^7.24.5",
+-        "@babel/parser": "^7.24.5",
+-        "@babel/types": "^7.24.5",
+-        "debug": "^4.3.1",
+-        "globals": "^11.1.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+-    "node_modules/@babel/types": {
+-      "version": "7.24.5",
+-      "resolved": "https://registry.npmjs.org/@babel/types/-/types-7.24.5.tgz",
+-      "integrity": "sha512-6mQNsaLeXTw0nxYUYu+NSa4Hx4BlF1x1x8/PMFbiR+GBSr+2DkECc69b8hgy2frEodNcvPffeH8YfWd3LI6jhQ==",
+-      "dev": true,
+-      "dependencies": {
+-        "@babel/helper-string-parser": "^7.24.1",
+-        "@babel/helper-validator-identifier": "^7.24.5",
+-        "to-fast-properties": "^2.0.0"
+-      },
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+     "node_modules/@esbuild/aix-ppc64": {
+       "version": "0.20.2",
+       "resolved": "https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.20.2.tgz",
+@@ -900,54 +543,6 @@
+       "integrity": "sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==",
+       "dev": true
+     },
+-    "node_modules/@jridgewell/gen-mapping": {
+-      "version": "0.3.5",
+-      "resolved": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.5.tgz",
+-      "integrity": "sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==",
+-      "dev": true,
+-      "dependencies": {
+-        "@jridgewell/set-array": "^1.2.1",
+-        "@jridgewell/sourcemap-codec": "^1.4.10",
+-        "@jridgewell/trace-mapping": "^0.3.24"
+-      },
+-      "engines": {
+-        "node": ">=6.0.0"
+-      }
+-    },
+-    "node_modules/@jridgewell/resolve-uri": {
+-      "version": "3.1.2",
+-      "resolved": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz",
+-      "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.0.0"
+-      }
+-    },
+-    "node_modules/@jridgewell/set-array": {
+-      "version": "1.2.1",
+-      "resolved": "https://registry.npmjs.org/@jridgewell/set-array/-/set-array-1.2.1.tgz",
+-      "integrity": "sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.0.0"
+-      }
+-    },
+-    "node_modules/@jridgewell/sourcemap-codec": {
+-      "version": "1.4.15",
+-      "resolved": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz",
+-      "integrity": "sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==",
+-      "dev": true
+-    },
+-    "node_modules/@jridgewell/trace-mapping": {
+-      "version": "0.3.25",
+-      "resolved": "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.25.tgz",
+-      "integrity": "sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==",
+-      "dev": true,
+-      "dependencies": {
+-        "@jridgewell/resolve-uri": "^3.1.0",
+-        "@jridgewell/sourcemap-codec": "^1.4.14"
+-      }
+-    },
+     "node_modules/@nodelib/fs.scandir": {
+       "version": "2.1.5",
+       "resolved": "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz",
+@@ -983,6 +578,15 @@
+         "node": ">= 8"
+       }
+     },
++    "node_modules/@remix-run/router": {
++      "version": "1.16.1",
++      "resolved": "https://registry.npmjs.org/@remix-run/router/-/router-1.16.1.tgz",
++      "integrity": "sha512-es2g3dq6Nb07iFxGk5GuHN20RwBZOsuDQN7izWIisUcv9r+d2C5jQxqmgkdebXgReWfiyUabcki6Fg77mSNrig==",
++      "license": "MIT",
++      "engines": {
++        "node": ">=14.0.0"
++      }
++    },
+     "node_modules/@rollup/rollup-android-arm-eabi": {
+       "version": "4.17.2",
+       "resolved": "https://registry.npmjs.org/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.17.2.tgz",
+@@ -1191,45 +795,230 @@
+         "win32"
+       ]
+     },
+-    "node_modules/@types/babel__core": {
+-      "version": "7.20.5",
+-      "resolved": "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.20.5.tgz",
+-      "integrity": "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==",
++    "node_modules/@swc/core": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core/-/core-1.5.7.tgz",
++      "integrity": "sha512-U4qJRBefIJNJDRCCiVtkfa/hpiZ7w0R6kASea+/KLp+vkus3zcLSB8Ub8SvKgTIxjWpwsKcZlPf5nrv4ls46SQ==",
+       "dev": true,
++      "hasInstallScript": true,
++      "license": "Apache-2.0",
+       "dependencies": {
+-        "@babel/parser": "^7.20.7",
+-        "@babel/types": "^7.20.7",
+-        "@types/babel__generator": "*",
+-        "@types/babel__template": "*",
+-        "@types/babel__traverse": "*"
++        "@swc/counter": "^0.1.2",
++        "@swc/types": "0.1.7"
++      },
++      "engines": {
++        "node": ">=10"
++      },
++      "funding": {
++        "type": "opencollective",
++        "url": "https://opencollective.com/swc"
++      },
++      "optionalDependencies": {
++        "@swc/core-darwin-arm64": "1.5.7",
++        "@swc/core-darwin-x64": "1.5.7",
++        "@swc/core-linux-arm-gnueabihf": "1.5.7",
++        "@swc/core-linux-arm64-gnu": "1.5.7",
++        "@swc/core-linux-arm64-musl": "1.5.7",
++        "@swc/core-linux-x64-gnu": "1.5.7",
++        "@swc/core-linux-x64-musl": "1.5.7",
++        "@swc/core-win32-arm64-msvc": "1.5.7",
++        "@swc/core-win32-ia32-msvc": "1.5.7",
++        "@swc/core-win32-x64-msvc": "1.5.7"
++      },
++      "peerDependencies": {
++        "@swc/helpers": "^0.5.0"
++      },
++      "peerDependenciesMeta": {
++        "@swc/helpers": {
++          "optional": true
++        }
+       }
+     },
+-    "node_modules/@types/babel__generator": {
+-      "version": "7.6.8",
+-      "resolved": "https://registry.npmjs.org/@types/babel__generator/-/babel__generator-7.6.8.tgz",
+-      "integrity": "sha512-ASsj+tpEDsEiFr1arWrlN6V3mdfjRMZt6LtK/Vp/kreFLnr5QH5+DhvD5nINYZXzwJvXeGq+05iUXcAzVrqWtw==",
++    "node_modules/@swc/core-darwin-arm64": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.5.7.tgz",
++      "integrity": "sha512-bZLVHPTpH3h6yhwVl395k0Mtx8v6CGhq5r4KQdAoPbADU974Mauz1b6ViHAJ74O0IVE5vyy7tD3OpkQxL/vMDQ==",
++      "cpu": [
++        "arm64"
++      ],
+       "dev": true,
+-      "dependencies": {
+-        "@babel/types": "^7.0.0"
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">=10"
+       }
+     },
+-    "node_modules/@types/babel__template": {
+-      "version": "7.4.4",
+-      "resolved": "https://registry.npmjs.org/@types/babel__template/-/babel__template-7.4.4.tgz",
+-      "integrity": "sha512-h/NUaSyG5EyxBIp8YRxo4RMe2/qQgvyowRwVMzhYhBCONbW8PUsg4lkFMrhgZhUe5z3L3MiLDuvyJ/CaPa2A8A==",
++    "node_modules/@swc/core-darwin-x64": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.5.7.tgz",
++      "integrity": "sha512-RpUyu2GsviwTc2qVajPL0l8nf2vKj5wzO3WkLSHAHEJbiUZk83NJrZd1RVbEknIMO7+Uyjh54hEh8R26jSByaw==",
++      "cpu": [
++        "x64"
++      ],
+       "dev": true,
+-      "dependencies": {
+-        "@babel/parser": "^7.1.0",
+-        "@babel/types": "^7.0.0"
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/core-linux-arm-gnueabihf": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.5.7.tgz",
++      "integrity": "sha512-cTZWTnCXLABOuvWiv6nQQM0hP6ZWEkzdgDvztgHI/+u/MvtzJBN5lBQ2lue/9sSFYLMqzqff5EHKlFtrJCA9dQ==",
++      "cpu": [
++        "arm"
++      ],
++      "dev": true,
++      "license": "Apache-2.0",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=10"
+       }
+     },
+-    "node_modules/@types/babel__traverse": {
+-      "version": "7.20.5",
+-      "resolved": "https://registry.npmjs.org/@types/babel__traverse/-/babel__traverse-7.20.5.tgz",
+-      "integrity": "sha512-WXCyOcRtH37HAUkpXhUduaxdm82b4GSlyTqajXviN4EfiuPgNYR109xMCKvpl6zPIpua0DGlMEDCq+g8EdoheQ==",
++    "node_modules/@swc/core-linux-arm64-gnu": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.5.7.tgz",
++      "integrity": "sha512-hoeTJFBiE/IJP30Be7djWF8Q5KVgkbDtjySmvYLg9P94bHg9TJPSQoC72tXx/oXOgXvElDe/GMybru0UxhKx4g==",
++      "cpu": [
++        "arm64"
++      ],
+       "dev": true,
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/core-linux-arm64-musl": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.5.7.tgz",
++      "integrity": "sha512-+NDhK+IFTiVK1/o7EXdCeF2hEzCiaRSrb9zD7X2Z7inwWlxAntcSuzZW7Y6BRqGQH89KA91qYgwbnjgTQ22PiQ==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/core-linux-x64-gnu": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.5.7.tgz",
++      "integrity": "sha512-25GXpJmeFxKB+7pbY7YQLhWWjkYlR+kHz5I3j9WRl3Lp4v4UD67OGXwPe+DIcHqcouA1fhLhsgHJWtsaNOMBNg==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/core-linux-x64-musl": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.5.7.tgz",
++      "integrity": "sha512-0VN9Y5EAPBESmSPPsCJzplZHV26akC0sIgd3Hc/7S/1GkSMoeuVL+V9vt+F/cCuzr4VidzSkqftdP3qEIsXSpg==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "linux"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/core-win32-arm64-msvc": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.5.7.tgz",
++      "integrity": "sha512-RtoNnstBwy5VloNCvmvYNApkTmuCe4sNcoYWpmY7C1+bPR+6SOo8im1G6/FpNem8AR5fcZCmXHWQ+EUmRWJyuA==",
++      "cpu": [
++        "arm64"
++      ],
++      "dev": true,
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/core-win32-ia32-msvc": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.5.7.tgz",
++      "integrity": "sha512-Xm0TfvcmmspvQg1s4+USL3x8D+YPAfX2JHygvxAnCJ0EHun8cm2zvfNBcsTlnwYb0ybFWXXY129aq1wgFC9TpQ==",
++      "cpu": [
++        "ia32"
++      ],
++      "dev": true,
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/core-win32-x64-msvc": {
++      "version": "1.5.7",
++      "resolved": "https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.5.7.tgz",
++      "integrity": "sha512-tp43WfJLCsKLQKBmjmY/0vv1slVywR5Q4qKjF5OIY8QijaEW7/8VwPyUyVoJZEnDgv9jKtUTG5PzqtIYPZGnyg==",
++      "cpu": [
++        "x64"
++      ],
++      "dev": true,
++      "license": "Apache-2.0 AND MIT",
++      "optional": true,
++      "os": [
++        "win32"
++      ],
++      "engines": {
++        "node": ">=10"
++      }
++    },
++    "node_modules/@swc/counter": {
++      "version": "0.1.3",
++      "resolved": "https://registry.npmjs.org/@swc/counter/-/counter-0.1.3.tgz",
++      "integrity": "sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==",
++      "dev": true,
++      "license": "Apache-2.0"
++    },
++    "node_modules/@swc/types": {
++      "version": "0.1.7",
++      "resolved": "https://registry.npmjs.org/@swc/types/-/types-0.1.7.tgz",
++      "integrity": "sha512-scHWahbHF0eyj3JsxG9CFJgFdFNaVQCNAimBlT6PzS3n/HptxqREjsm4OH6AN3lYcffZYSPxXW8ua2BEHp0lJQ==",
++      "dev": true,
++      "license": "Apache-2.0",
+       "dependencies": {
+-        "@babel/types": "^7.20.7"
++        "@swc/counter": "^0.1.3"
+       }
+     },
+     "node_modules/@types/estree": {
+@@ -1238,6 +1027,16 @@
+       "integrity": "sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==",
+       "dev": true
+     },
++    "node_modules/@types/node": {
++      "version": "20.12.12",
++      "resolved": "https://registry.npmjs.org/@types/node/-/node-20.12.12.tgz",
++      "integrity": "sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "undici-types": "~5.26.4"
++      }
++    },
+     "node_modules/@types/prop-types": {
+       "version": "15.7.12",
+       "resolved": "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.12.tgz",
+@@ -1454,23 +1253,17 @@
+       "integrity": "sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==",
+       "dev": true
+     },
+-    "node_modules/@vitejs/plugin-react": {
+-      "version": "4.2.1",
+-      "resolved": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-4.2.1.tgz",
+-      "integrity": "sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==",
++    "node_modules/@vitejs/plugin-react-swc": {
++      "version": "3.7.0",
++      "resolved": "https://registry.npmjs.org/@vitejs/plugin-react-swc/-/plugin-react-swc-3.7.0.tgz",
++      "integrity": "sha512-yrknSb3Dci6svCd/qhHqhFPDSw0QtjumcqdKMoNNzmOl5lMXTTiqzjWtG4Qask2HdvvzaNgSunbQGet8/GrKdA==",
+       "dev": true,
++      "license": "MIT",
+       "dependencies": {
+-        "@babel/core": "^7.23.5",
+-        "@babel/plugin-transform-react-jsx-self": "^7.23.3",
+-        "@babel/plugin-transform-react-jsx-source": "^7.23.3",
+-        "@types/babel__core": "^7.20.5",
+-        "react-refresh": "^0.14.0"
+-      },
+-      "engines": {
+-        "node": "^14.18.0 || >=16.0.0"
++        "@swc/core": "^1.5.7"
+       },
+       "peerDependencies": {
+-        "vite": "^4.2.0 || ^5.0.0"
++        "vite": "^4 || ^5"
+       }
+     },
+     "node_modules/acorn": {
+@@ -1519,18 +1312,6 @@
+         "node": ">=8"
+       }
+     },
+-    "node_modules/ansi-styles": {
+-      "version": "3.2.1",
+-      "resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
+-      "integrity": "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==",
+-      "dev": true,
+-      "dependencies": {
+-        "color-convert": "^1.9.0"
+-      },
+-      "engines": {
+-        "node": ">=4"
+-      }
+-    },
+     "node_modules/argparse": {
+       "version": "2.0.1",
+       "resolved": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz",
+@@ -1573,38 +1354,6 @@
+         "node": ">=8"
+       }
+     },
+-    "node_modules/browserslist": {
+-      "version": "4.23.0",
+-      "resolved": "https://registry.npmjs.org/browserslist/-/browserslist-4.23.0.tgz",
+-      "integrity": "sha512-QW8HiM1shhT2GuzkvklfjcKDiWFXHOeFCIA/huJPwHsslwcydgk7X+z2zXpEijP98UCY7HbubZt5J2Zgvf0CaQ==",
+-      "dev": true,
+-      "funding": [
+-        {
+-          "type": "opencollective",
+-          "url": "https://opencollective.com/browserslist"
+-        },
+-        {
+-          "type": "tidelift",
+-          "url": "https://tidelift.com/funding/github/npm/browserslist"
+-        },
+-        {
+-          "type": "github",
+-          "url": "https://github.com/sponsors/ai"
+-        }
+-      ],
+-      "dependencies": {
+-        "caniuse-lite": "^1.0.30001587",
+-        "electron-to-chromium": "^1.4.668",
+-        "node-releases": "^2.0.14",
+-        "update-browserslist-db": "^1.0.13"
+-      },
+-      "bin": {
+-        "browserslist": "cli.js"
+-      },
+-      "engines": {
+-        "node": "^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7"
+-      }
+-    },
+     "node_modules/callsites": {
+       "version": "3.1.0",
+       "resolved": "https://registry.npmjs.org/callsites/-/callsites-3.1.0.tgz",
+@@ -1614,67 +1363,12 @@
+         "node": ">=6"
+       }
+     },
+-    "node_modules/caniuse-lite": {
+-      "version": "1.0.30001620",
+-      "resolved": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001620.tgz",
+-      "integrity": "sha512-WJvYsOjd1/BYUY6SNGUosK9DUidBPDTnOARHp3fSmFO1ekdxaY6nKRttEVrfMmYi80ctS0kz1wiWmm14fVc3ew==",
+-      "dev": true,
+-      "funding": [
+-        {
+-          "type": "opencollective",
+-          "url": "https://opencollective.com/browserslist"
+-        },
+-        {
+-          "type": "tidelift",
+-          "url": "https://tidelift.com/funding/github/npm/caniuse-lite"
+-        },
+-        {
+-          "type": "github",
+-          "url": "https://github.com/sponsors/ai"
+-        }
+-      ]
+-    },
+-    "node_modules/chalk": {
+-      "version": "2.4.2",
+-      "resolved": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
+-      "integrity": "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==",
+-      "dev": true,
+-      "dependencies": {
+-        "ansi-styles": "^3.2.1",
+-        "escape-string-regexp": "^1.0.5",
+-        "supports-color": "^5.3.0"
+-      },
+-      "engines": {
+-        "node": ">=4"
+-      }
+-    },
+-    "node_modules/color-convert": {
+-      "version": "1.9.3",
+-      "resolved": "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz",
+-      "integrity": "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==",
+-      "dev": true,
+-      "dependencies": {
+-        "color-name": "1.1.3"
+-      }
+-    },
+-    "node_modules/color-name": {
+-      "version": "1.1.3",
+-      "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz",
+-      "integrity": "sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==",
+-      "dev": true
+-    },
+     "node_modules/concat-map": {
+       "version": "0.0.1",
+       "resolved": "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz",
+       "integrity": "sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==",
+       "dev": true
+     },
+-    "node_modules/convert-source-map": {
+-      "version": "2.0.0",
+-      "resolved": "https://registry.npmjs.org/convert-source-map/-/convert-source-map-2.0.0.tgz",
+-      "integrity": "sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==",
+-      "dev": true
+-    },
+     "node_modules/cross-spawn": {
+       "version": "7.0.3",
+       "resolved": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz",
+@@ -1742,12 +1436,6 @@
+         "node": ">=6.0.0"
+       }
+     },
+-    "node_modules/electron-to-chromium": {
+-      "version": "1.4.776",
+-      "resolved": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.776.tgz",
+-      "integrity": "sha512-s694bi3+gUzlliqxjPHpa9NRTlhzTgB34aan+pVKZmOTGy2xoZXl+8E1B8i5p5rtev3PKMK/H4asgNejC+YHNg==",
+-      "dev": true
+-    },
+     "node_modules/esbuild": {
+       "version": "0.20.2",
+       "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.20.2.tgz",
+@@ -1786,24 +1474,6 @@
+         "@esbuild/win32-x64": "0.20.2"
+       }
+     },
+-    "node_modules/escalade": {
+-      "version": "3.1.2",
+-      "resolved": "https://registry.npmjs.org/escalade/-/escalade-3.1.2.tgz",
+-      "integrity": "sha512-ErCHMCae19vR8vQGe50xIsVomy19rg6gFu3+r3jkEO46suLMWBksvVyoGgQV+jOfl84ZSOSlmv6Gxa89PmTGmA==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6"
+-      }
+-    },
+-    "node_modules/escape-string-regexp": {
+-      "version": "1.0.5",
+-      "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz",
+-      "integrity": "sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=0.8.0"
+-      }
+-    },
+     "node_modules/eslint": {
+       "version": "8.57.0",
+       "resolved": "https://registry.npmjs.org/eslint/-/eslint-8.57.0.tgz",
+@@ -2221,15 +1891,6 @@
+         "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
+       }
+     },
+-    "node_modules/gensync": {
+-      "version": "1.0.0-beta.2",
+-      "resolved": "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz",
+-      "integrity": "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=6.9.0"
+-      }
+-    },
+     "node_modules/glob": {
+       "version": "7.2.3",
+       "resolved": "https://registry.npmjs.org/glob/-/glob-7.2.3.tgz",
+@@ -2284,15 +1945,6 @@
+         "node": "*"
+       }
+     },
+-    "node_modules/globals": {
+-      "version": "11.12.0",
+-      "resolved": "https://registry.npmjs.org/globals/-/globals-11.12.0.tgz",
+-      "integrity": "sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=4"
+-      }
+-    },
+     "node_modules/globby": {
+       "version": "11.1.0",
+       "resolved": "https://registry.npmjs.org/globby/-/globby-11.1.0.tgz",
+@@ -2319,15 +1971,6 @@
+       "integrity": "sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==",
+       "dev": true
+     },
+-    "node_modules/has-flag": {
+-      "version": "3.0.0",
+-      "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
+-      "integrity": "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=4"
+-      }
+-    },
+     "node_modules/ignore": {
+       "version": "5.3.1",
+       "resolved": "https://registry.npmjs.org/ignore/-/ignore-5.3.1.tgz",
+@@ -2440,18 +2083,6 @@
+         "js-yaml": "bin/js-yaml.js"
+       }
+     },
+-    "node_modules/jsesc": {
+-      "version": "2.5.2",
+-      "resolved": "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz",
+-      "integrity": "sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==",
+-      "dev": true,
+-      "bin": {
+-        "jsesc": "bin/jsesc"
+-      },
+-      "engines": {
+-        "node": ">=4"
+-      }
+-    },
+     "node_modules/json-buffer": {
+       "version": "3.0.1",
+       "resolved": "https://registry.npmjs.org/json-buffer/-/json-buffer-3.0.1.tgz",
+@@ -2470,18 +2101,6 @@
+       "integrity": "sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==",
+       "dev": true
+     },
+-    "node_modules/json5": {
+-      "version": "2.2.3",
+-      "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz",
+-      "integrity": "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==",
+-      "dev": true,
+-      "bin": {
+-        "json5": "lib/cli.js"
+-      },
+-      "engines": {
+-        "node": ">=6"
+-      }
+-    },
+     "node_modules/keyv": {
+       "version": "4.5.4",
+       "resolved": "https://registry.npmjs.org/keyv/-/keyv-4.5.4.tgz",
+@@ -2536,15 +2155,6 @@
+         "loose-envify": "cli.js"
+       }
+     },
+-    "node_modules/lru-cache": {
+-      "version": "5.1.1",
+-      "resolved": "https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz",
+-      "integrity": "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==",
+-      "dev": true,
+-      "dependencies": {
+-        "yallist": "^3.0.2"
+-      }
+-    },
+     "node_modules/merge2": {
+       "version": "1.4.1",
+       "resolved": "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz",
+@@ -2612,12 +2222,6 @@
+       "integrity": "sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==",
+       "dev": true
+     },
+-    "node_modules/node-releases": {
+-      "version": "2.0.14",
+-      "resolved": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.14.tgz",
+-      "integrity": "sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==",
+-      "dev": true
+-    },
+     "node_modules/once": {
+       "version": "1.4.0",
+       "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+@@ -2833,6 +2437,7 @@
+       "version": "7.51.5",
+       "resolved": "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.51.5.tgz",
+       "integrity": "sha512-J2ILT5gWx1XUIJRETiA7M19iXHlG74+6O3KApzvqB/w8S5NQR7AbU8HVZrMALdmDgWpRPYiZJl0zx8Z4L2mP6Q==",
++      "license": "MIT",
+       "engines": {
+         "node": ">=12.22.0"
+       },
+@@ -2844,13 +2449,36 @@
+         "react": "^16.8.0 || ^17 || ^18"
+       }
+     },
+-    "node_modules/react-refresh": {
+-      "version": "0.14.2",
+-      "resolved": "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz",
+-      "integrity": "sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==",
+-      "dev": true,
++    "node_modules/react-router": {
++      "version": "6.23.1",
++      "resolved": "https://registry.npmjs.org/react-router/-/react-router-6.23.1.tgz",
++      "integrity": "sha512-fzcOaRF69uvqbbM7OhvQyBTFDVrrGlsFdS3AL+1KfIBtGETibHzi3FkoTRyiDJnWNc2VxrfvR+657ROHjaNjqQ==",
++      "license": "MIT",
++      "dependencies": {
++        "@remix-run/router": "1.16.1"
++      },
+       "engines": {
+-        "node": ">=0.10.0"
++        "node": ">=14.0.0"
++      },
++      "peerDependencies": {
++        "react": ">=16.8"
++      }
++    },
++    "node_modules/react-router-dom": {
++      "version": "6.23.1",
++      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.23.1.tgz",
++      "integrity": "sha512-utP+K+aSTtEdbWpC+4gxhdlPFwuEfDKq8ZrPFU65bbRJY+l706qjR7yaidBpo3MSeA/fzwbXWbKBI6ftOnP3OQ==",
++      "license": "MIT",
++      "dependencies": {
++        "@remix-run/router": "1.16.1",
++        "react-router": "6.23.1"
++      },
++      "engines": {
++        "node": ">=14.0.0"
++      },
++      "peerDependencies": {
++        "react": ">=16.8",
++        "react-dom": ">=16.8"
+       }
+     },
+     "node_modules/resolve-from": {
+@@ -3028,33 +2656,12 @@
+         "url": "https://github.com/sponsors/sindresorhus"
+       }
+     },
+-    "node_modules/supports-color": {
+-      "version": "5.5.0",
+-      "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
+-      "integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==",
+-      "dev": true,
+-      "dependencies": {
+-        "has-flag": "^3.0.0"
+-      },
+-      "engines": {
+-        "node": ">=4"
+-      }
+-    },
+     "node_modules/text-table": {
+       "version": "0.2.0",
+       "resolved": "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz",
+       "integrity": "sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==",
+       "dev": true
+     },
+-    "node_modules/to-fast-properties": {
+-      "version": "2.0.0",
+-      "resolved": "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz",
+-      "integrity": "sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==",
+-      "dev": true,
+-      "engines": {
+-        "node": ">=4"
+-      }
+-    },
+     "node_modules/to-regex-range": {
+       "version": "5.0.1",
+       "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
+@@ -3116,35 +2723,12 @@
+         "node": ">=14.17"
+       }
+     },
+-    "node_modules/update-browserslist-db": {
+-      "version": "1.0.16",
+-      "resolved": "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.0.16.tgz",
+-      "integrity": "sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==",
++    "node_modules/undici-types": {
++      "version": "5.26.5",
++      "resolved": "https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz",
++      "integrity": "sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==",
+       "dev": true,
+-      "funding": [
+-        {
+-          "type": "opencollective",
+-          "url": "https://opencollective.com/browserslist"
+-        },
+-        {
+-          "type": "tidelift",
+-          "url": "https://tidelift.com/funding/github/npm/browserslist"
+-        },
+-        {
+-          "type": "github",
+-          "url": "https://github.com/sponsors/ai"
+-        }
+-      ],
+-      "dependencies": {
+-        "escalade": "^3.1.2",
+-        "picocolors": "^1.0.1"
+-      },
+-      "bin": {
+-        "update-browserslist-db": "cli.js"
+-      },
+-      "peerDependencies": {
+-        "browserslist": ">= 4.21.0"
+-      }
++      "license": "MIT"
+     },
+     "node_modules/uri-js": {
+       "version": "4.4.1",
+@@ -3240,12 +2824,6 @@
+       "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==",
+       "dev": true
+     },
+-    "node_modules/yallist": {
+-      "version": "3.1.1",
+-      "resolved": "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz",
+-      "integrity": "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==",
+-      "dev": true
+-    },
+     "node_modules/yocto-queue": {
+       "version": "0.1.0",
+       "resolved": "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz",
+diff --git a/package.json b/package.json
+index 4cf83da..6901c6c 100644
+--- a/package.json
++++ b/package.json
+@@ -12,14 +12,16 @@
+   "dependencies": {
+     "react": "^18.2.0",
+     "react-dom": "^18.2.0",
+-    "react-hook-form": "^7.51.5"
++    "react-hook-form": "^7.51.5",
++    "react-router-dom": "^6.23.1"
+   },
+   "devDependencies": {
++    "@types/node": "^20.12.12",
+     "@types/react": "^18.2.66",
+     "@types/react-dom": "^18.2.22",
+     "@typescript-eslint/eslint-plugin": "^7.2.0",
+     "@typescript-eslint/parser": "^7.2.0",
+-    "@vitejs/plugin-react": "^4.2.1",
++    "@vitejs/plugin-react-swc": "^3.7.0",
+     "eslint": "^8.57.0",
+     "eslint-plugin-react-hooks": "^4.6.0",
+     "eslint-plugin-react-refresh": "^0.4.6",
+diff --git a/router-context.patch b/router-context.patch
+new file mode 100644
+index 0000000..e69de29
+diff --git a/src/App.tsx b/src/App.tsx
+deleted file mode 100644
+index a94616e..0000000
+--- a/src/App.tsx
++++ /dev/null
+@@ -1,20 +0,0 @@
+-import { Header } from './components/header/header'
+-import PokemonList from './components/pokemonList/pokemonList'
+-import './App.css'
+-
+-function App() {
+-
+-  return (
+-    <>
+-      {<div id='container'>
+-        <Header/>
+-        <div id='pokemonList'>
+-        <PokemonList/>
+-        </div>
+-      </div>}
+-      
+-    </>
+-  )
+-}
+-
+-export default App
+diff --git a/src/api/pokemons/pokemon.api.ts b/src/api/pokemons/pokemon.api.ts
+new file mode 100644
+index 0000000..df22a06
+--- /dev/null
++++ b/src/api/pokemons/pokemon.api.ts
+@@ -0,0 +1,18 @@
++import { BASE_URL } from "@constants/api.constants";
++import { NamedAPIResourceList } from "@api/type";
++
++import { PokemonAPIResource } from "./pokemon.model";
++
++const POKEMON_PATH = "/pokemon";
++
++export const getPokemons = async (
++  params?: URLSearchParams
++): Promise<NamedAPIResourceList> => {
++  const response = await fetch(`${BASE_URL}${POKEMON_PATH}?${params}`);
++  return response.json();
++};
++
++export const getPokemon = async (name: string): Promise<PokemonAPIResource> => {
++  const response = await fetch(`${BASE_URL}${POKEMON_PATH}/${name}`);
++  return response.json();
++};
+diff --git a/src/api/pokemons/pokemon.model.ts b/src/api/pokemons/pokemon.model.ts
+new file mode 100644
+index 0000000..fb377d4
+--- /dev/null
++++ b/src/api/pokemons/pokemon.model.ts
+@@ -0,0 +1,105 @@
++import { NamedAPIResource } from "../type";
++
++export interface Pokemon {
++  id: number;
++  name: string;
++  types: string[];
++  img: string;
++}
++
++export interface PokemonAPIResource {
++  id: number;
++  name: string;
++  base_experience: number;
++  height: number;
++  is_default: boolean;
++  order: number;
++  weight: number;
++  abilities: PokemonAbility[];
++  forms: NamedAPIResource[];
++  game_indices: VersionGameIndex[];
++  held_items: PokemonHeldItem[];
++  location_area_encounters: string;
++  moves: PokemonMove[];
++  past_types: PokemonTypePast[];
++  sprites: PokemonSprites;
++  cries: PokemonCries;
++  species: NamedAPIResource;
++  stats: PokemonStat[];
++  types: PokemonType[];
++}
++
++interface PokemonAbility {
++  is_hidden: boolean;
++  slot: number;
++  ability: NamedAPIResource;
++}
++
++interface PokemonType {
++  slot: number;
++  type: NamedAPIResource;
++}
++
++interface PokemonTypePast {
++  generation: NamedAPIResource;
++  types: PokemonType[];
++}
++
++interface PokemonHeldItem {
++  item: NamedAPIResource;
++  version_details: PokemonHeldItemVersion[];
++}
++
++interface PokemonHeldItemVersion {
++  version: NamedAPIResource;
++  rarity: number;
++}
++
++interface PokemonMove {
++  move: NamedAPIResource;
++  version_group_details: PokemonMoveVersion[];
++}
++
++interface PokemonMoveVersion {
++  move_learn_method: NamedAPIResource;
++  version_group: NamedAPIResource;
++  level_learned_at: number;
++}
++
++interface PokemonStat {
++  stat: NamedAPIResource;
++  effort: number;
++  base_stat: number;
++}
++
++interface PokemonSprites {
++  front_default: string;
++  front_shiny: string;
++  front_female: string;
++  front_shiny_female: string;
++  back_default: string;
++  back_shiny: string;
++  back_female: string;
++  back_shiny_female: string;
++  other: PokemonSpritesOther;
++}
++
++interface PokemonSpritesOther {
++  dream_world: {
++    front_default: string;
++  };
++  "official-artwork": {
++    front_default: string;
++    front_shiny: string;
++  };
++}
++
++interface PokemonCries {
++  latest: string;
++  legacy: string;
++}
++
++interface VersionGameIndex {
++  game_index: number;
++  version: NamedAPIResource;
++}
+diff --git a/src/api/type.ts b/src/api/type.ts
+new file mode 100644
+index 0000000..5682dcb
+--- /dev/null
++++ b/src/api/type.ts
+@@ -0,0 +1,30 @@
++export interface NamedAPIResourceList {
++  count: number;
++  next: string | null;
++  previous: string | null;
++  results: NamedAPIResource[];
++}
++
++export interface UnnamedAPIResourceList {
++  count: number;
++  next: string | null;
++  previous: string | null;
++  results: APIResource[];
++}
++
++export interface NamedAPIResource {
++  name: string;
++  url: string;
++}
++
++export interface APIResource {
++  url: string;
++}
++
++export const isFulfilled = <T>(
++  p: PromiseSettledResult<T>
++): p is PromiseFulfilledResult<T> => p.status === "fulfilled";
++
++export const isRejected = <T>(
++  p: PromiseSettledResult<T>
++): p is PromiseRejectedResult => p.status === "rejected";
+diff --git a/src/App.css b/src/app.css
+similarity index 95%
+rename from src/App.css
+rename to src/app.css
+index 57d10a8..fd535cc 100644
+--- a/src/App.css
++++ b/src/app.css
+@@ -1,5 +1,3 @@
+-
+-
+ #container {
+   width: 100%;
+   height: 100%;
+diff --git a/src/app.tsx b/src/app.tsx
+new file mode 100644
+index 0000000..fd74ce7
+--- /dev/null
++++ b/src/app.tsx
+@@ -0,0 +1,29 @@
++import { PokemonProvider } from "./contexts/pokemon/pokemon.provider";
++
++import "./app.css";
++import { RouterProvider, createBrowserRouter } from "react-router-dom";
++import ListPage from "@pages/list";
++import DetailsPage from "@pages/details";
++
++import { LIST_PAGE, DETAILS_PAGE } from "@constants/routing.constants";
++
++const router = createBrowserRouter([
++  {
++    ...LIST_PAGE,
++    element: <ListPage />,
++  },
++  {
++    ...DETAILS_PAGE,
++    element: <DetailsPage />,
++  },
++]);
++
++function App() {
++  return (
++    <PokemonProvider>
++      <RouterProvider router={router} />
++    </PokemonProvider>
++  );
++}
++
++export default App;
+diff --git a/src/components/infiniteScroll.tsx b/src/components/infiniteScroll.tsx
+new file mode 100644
+index 0000000..1feb411
+--- /dev/null
++++ b/src/components/infiniteScroll.tsx
+@@ -0,0 +1,34 @@
++import { useEffect, useRef } from "react";
++
++interface InfiniteScrollProps {
++  onIntersect: VoidFunction;
++}
++
++const InfiniteScroll: React.FC<InfiniteScrollProps> = ({ onIntersect }) => {
++  const containerRef = useRef<HTMLDivElement>(null);
++
++  useEffect(() => {
++    const options = {
++      root: null,
++      rootMargin: "0px",
++      threshold: 1.0,
++    };
++
++    const observer = new IntersectionObserver(([entry]) => {
++      if (entry.isIntersecting) {
++        observer.disconnect();
++        onIntersect();
++      }
++    }, options);
++
++    if (containerRef.current) {
++      observer.observe(containerRef.current);
++    }
++
++    return () => observer.disconnect();
++  }, [onIntersect]);
++
++  return <div ref={containerRef} />;
++};
++
++export default InfiniteScroll;
+diff --git a/src/components/pokemonList/pokemonList.tsx b/src/components/pokemonList/pokemonList.tsx
+index 1950d33..611ceba 100644
+--- a/src/components/pokemonList/pokemonList.tsx
++++ b/src/components/pokemonList/pokemonList.tsx
+@@ -1,62 +1,51 @@
+-import { useLayoutEffect, useState } from "react";
+-import './pokemonList.css'
+-
+-interface Pokemon {
+-  name: string;
+-  types: string[];
+-  img: string;
+-  number: number;
+-}
+-
+-function PokemonList() {
+-  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+-
+-  useLayoutEffect(() => {
+-    async function fetchPokemons() {
+-      await fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
+-        .then((response) => response.json())
+-        .then(async (data) => {
+-          return await Promise.all(
+-            data.results.map(async (pokemon) =>
+-              await fetch(pokemon.url)
+-                .then((response) => response.json())
+-                .then((data) => ({
+-                  name: data.name,
+-                  types: data.types.map(type => type.type.name),
+-                  img: data.sprites.other["official-artwork"].front_default,
+-                  number: data.id,
+-                }))
+-            )
+-          ).then((pokemons) => setPokemons(pokemons));
+-        })
+-        .catch((e) => {
+-          console.error(e);
+-        });
+-    }
+-
+-    fetchPokemons();
+-  }, []);
+-
+-  console.log(pokemons);
++import { useMemo } from "react";
+ 
++import { usePokemon } from "@contexts/pokemon/pokemon.provider";
++import InfiniteScroll from "@components/infiniteScroll";
++
++interface PokemonListProps {}
++
++const PokemonList: React.FC<PokemonListProps> = () => {
++  const {
++    state: { isLoading, filteredPokemons, pagination, pokemons },
++    actions: { loadPokemons },
++  } = usePokemon();
++
++  const isInitial = useMemo(() => pokemons.size === 0, [pokemons.size]);
++
++  const onIntersect = () => {
++    if (isLoading) return;
++
++    loadPokemons({
++      limit: pagination.limit,
++      offset: isInitial ? 0 : pagination.offset + pagination.limit,
++    });
++  };
+ 
+   return (
+-    <ul className="pokemonList">
+-      {pokemons.map((pokemon) => (
+-        <li key={pokemon.name} className="pokemonCard">
+-         <h1 className="pokemonName">{pokemon.name}</h1> 
+-         <p className="pokemonId">#{(Array(4).join("0")+pokemon.number).slice(-4)}</p>
+-          <img src={pokemon.img} />
+-          <div className="typeOrganization">
+-            {pokemon.types.map((type) => (
+-              <div key={`${pokemon.name}-${type}`} className={`${type}`} >
+-                {type}
+-              </div>
+-            ))}
+-          </div>
+-        </li>
+-      ))}
+-    </ul>
++    <div>
++      <h1>List Pokemon</h1>
++      <ul className='pokemonList'>
++        {filteredPokemons.map((pokemon) => (
++          <li key={pokemon.name} className='pokemonCard'>
++            <h1 className='pokemonName'>{pokemon.name}</h1>
++            <p className='pokemonId'>
++              #{(Array(4).join("0") + pokemon.id).slice(-4)}
++            </p>
++            <img src={pokemon.img} />
++            <div className='typeOrganization'>
++              {pokemon.types.map((type) => (
++                <div key={`${pokemon.name}-${type}`} className={`${type}`}>
++                  {type}
++                </div>
++              ))}
++            </div>
++          </li>
++        ))}
++        <InfiniteScroll onIntersect={onIntersect} />
++      </ul>
++    </div>
+   );
+-}
+-export default PokemonList;
+\ No newline at end of file
++};
++
++export default PokemonList;
+diff --git a/src/constants/api.constants.ts b/src/constants/api.constants.ts
+new file mode 100644
+index 0000000..8671ab1
+--- /dev/null
++++ b/src/constants/api.constants.ts
+@@ -0,0 +1 @@
++export const BASE_URL = "https://pokeapi.co/api/v2";
+diff --git a/src/constants/routing.constants.ts b/src/constants/routing.constants.ts
+new file mode 100644
+index 0000000..f0c45cd
+--- /dev/null
++++ b/src/constants/routing.constants.ts
+@@ -0,0 +1,9 @@
++export const DETAILS_PAGE = {
++  title: "Detalhes - {name}",
++  path: "/detalhes/:name",
++};
++
++export const LIST_PAGE = {
++  title: "Lista de Pokémons",
++  path: "/",
++};
+diff --git a/src/contexts/pokemon/pokemon.actions.ts b/src/contexts/pokemon/pokemon.actions.ts
+new file mode 100644
+index 0000000..8f0ef98
+--- /dev/null
++++ b/src/contexts/pokemon/pokemon.actions.ts
+@@ -0,0 +1,122 @@
++import { Pokemon } from "@api/pokemons/pokemon.model";
++import { getPokemons, getPokemon } from "@api/pokemons/pokemon.api";
++import { IPokemonContextState } from "./pokemon.provider";
++import { isFulfilled } from "@api/type";
++
++export type PokemonActions =
++  | SetFilterAction
++  | SetLoadingAction
++  | SetPokemonsAction
++  | PaginateAction
++  | SelectPokemonAction;
++
++type SetPokemonsAction = {
++  type: "SET_POKEMONS";
++  payload: Map<string, Pokemon>;
++};
++type SetLoadingAction = { type: "SET_LOADING"; payload: boolean };
++type SetFilterAction = { type: "SET_FILTER"; payload: string };
++type PaginateAction = {
++  type: "PAGINATE";
++  payload: IPokemonContextState["pagination"];
++};
++type SelectPokemonAction = { type: "SELECT_POKEMON"; payload: Pokemon["name"] };
++
++const setPokemons = (
++  pokemons: Map<string, Pokemon>,
++  {
++    dispatch,
++  }: {
++    state: IPokemonContextState;
++    dispatch: React.Dispatch<SetPokemonsAction>;
++  }
++) => {
++  dispatch({
++    type: "SET_POKEMONS",
++    payload: pokemons,
++  });
++};
++
++const setFilter = (
++  name: string,
++  { dispatch }: { dispatch: React.Dispatch<SetFilterAction> }
++) => {
++  dispatch({
++    type: "SET_FILTER",
++    payload: name,
++  });
++};
++
++const setLoading = (
++  loading: boolean,
++  { dispatch }: { dispatch: React.Dispatch<SetLoadingAction> }
++) => {
++  dispatch({ type: "SET_LOADING", payload: loading });
++};
++
++const selectPokemon = (
++  name: Pokemon["name"],
++  { dispatch }: { dispatch: React.Dispatch<SelectPokemonAction> }
++) => {
++  dispatch({ type: "SELECT_POKEMON", payload: name });
++};
++
++const fetchPokemons = async (
++  pagination: { offset: string; limit: string },
++  {
++    dispatch,
++  }: { dispatch: React.Dispatch<SetLoadingAction | SetPokemonsAction> }
++) => {
++  const params = new URLSearchParams(pagination);
++
++  dispatch({ type: "SET_LOADING", payload: true });
++
++  // Captura a lista de pokemons
++  await getPokemons(params)
++    .then(
++      async ({ results: pokemons }) =>
++        // Captura os detalhes de cada pokemon
++        await Promise.allSettled(pokemons.map(({ name }) => getPokemon(name)))
++          .then((responses) =>
++            // Filtra os resultados que foram resolvidos e cria um vetor de pokemons
++            responses.filter(isFulfilled).map(({ value: pokemon }) => pokemon)
++          )
++          .then(
++            (pokemons) =>
++              // Cria um mapa de pokemons, sendo o nome do pokemon a chave
++              new Map(
++                pokemons.map((pokemon) => [
++                  pokemon.name,
++                  {
++                    id: pokemon.id,
++                    name: pokemon.name,
++                    types: pokemon.types.map(({ type }) => type.name),
++                    img: pokemon.sprites.other["official-artwork"]
++                      .front_default,
++                  } as Pokemon,
++                ])
++              )
++          )
++    )
++    .then((pokemons) => {
++      dispatch({ type: "SET_POKEMONS", payload: pokemons });
++    });
++
++  dispatch({ type: "SET_LOADING", payload: false });
++};
++
++const loadPokemons = (
++  pagination: IPokemonContextState["pagination"],
++  { dispatch }: { dispatch: React.Dispatch<PaginateAction> }
++) => {
++  dispatch({ type: "PAGINATE", payload: pagination });
++};
++
++export default {
++  fetchPokemons,
++  setPokemons,
++  setFilter,
++  setLoading,
++  selectPokemon,
++  loadPokemons,
++};
+diff --git a/src/contexts/pokemon/pokemon.provider.tsx b/src/contexts/pokemon/pokemon.provider.tsx
+new file mode 100644
+index 0000000..58ee812
+--- /dev/null
++++ b/src/contexts/pokemon/pokemon.provider.tsx
+@@ -0,0 +1,89 @@
++import {
++  createContext,
++  useContext,
++  useEffect,
++  useMemo,
++  useReducer,
++} from "react";
++
++import { Pokemon } from "src/api/pokemons/pokemon.model";
++import reducer from "./pokemon.reducer";
++import actions from "./pokemon.actions";
++
++export interface IPokemonContextState {
++  pokemons: Map<string, Pokemon>;
++  filteredPokemons: Pokemon[];
++  selectedPokemons: string[];
++  filter: string | null;
++  isLoading: boolean;
++  error: unknown;
++  pagination: {
++    offset: number;
++    limit: number;
++  };
++}
++
++interface IPokemonContext {
++  state: IPokemonContextState;
++  // typeof actions, but each function bound to the current state and dispatch (perhaps remove second argument)
++  actions: {
++    [key: string]: (
++      arg: Parameters<(typeof actions)[keyof typeof actions]>[0]
++    ) => void;
++  };
++}
++
++const PokemonContext = createContext<IPokemonContext>({} as IPokemonContext);
++const initialState: IPokemonContextState = {
++  filteredPokemons: [],
++  pokemons: new Map(),
++  selectedPokemons: [],
++  filter: null,
++  isLoading: false,
++  error: null,
++  pagination: {
++    offset: 0,
++    limit: 20,
++  },
++};
++
++function PokemonProvider(props: React.PropsWithChildren<object>) {
++  const [state, dispatch] = useReducer(reducer, initialState);
++
++  const transformedActions: IPokemonContext["actions"] = useMemo(() => {
++    return Object.entries(actions).reduce((acc, [key, action]) => {
++      // @ts-expect-error - não é possível inferir o tipo de value
++      acc[key] = (argument) => action(argument, { state, dispatch });
++
++      return acc;
++    }, {});
++  }, [state, dispatch]);
++
++  useEffect(() => {
++    // Quando paginar a página de listagem, deve se carregar os pokemons
++    if (state.isLoading) return;
++
++    transformedActions.fetchPokemons(state.pagination);
++    // eslint-disable-next-line react-hooks/exhaustive-deps
++  }, [state.pagination]);
++
++  return (
++    <PokemonContext.Provider
++      value={{ state, actions: transformedActions }}
++      {...props}
++    />
++  );
++}
++
++function usePokemon() {
++  const context = useContext(PokemonContext);
++
++  if (!context) {
++    throw new Error("usePokemon must be used within a PokemonProvider");
++  }
++
++  return context;
++}
++
++// eslint-disable-next-line react-refresh/only-export-components
++export { usePokemon, PokemonProvider };
+diff --git a/src/contexts/pokemon/pokemon.reducer.ts b/src/contexts/pokemon/pokemon.reducer.ts
+new file mode 100644
+index 0000000..6f95cb3
+--- /dev/null
++++ b/src/contexts/pokemon/pokemon.reducer.ts
+@@ -0,0 +1,62 @@
++import { IPokemonContextState } from "./pokemon.provider";
++import { PokemonActions } from "./pokemon.actions";
++
++const PokemonReducer = (
++  state: IPokemonContextState,
++  action: PokemonActions
++) => {
++  const filterByName =
++    (search: string | null) =>
++    ({ name }: IPokemonContextState["filteredPokemons"][number]) => {
++      return search ? name.includes(search) : true;
++    };
++
++  switch (action.type) {
++    case "SET_POKEMONS":
++      if (!action.payload) return state;
++
++      return {
++        ...state,
++        pokemons: action.payload,
++        filteredPokemons: Array.from(action.payload.values()).filter(
++          filterByName(state.filter)
++        ),
++      };
++    case "SET_LOADING":
++      return {
++        ...state,
++        loading: !!action.payload,
++      };
++    case "SET_FILTER":
++      if (!action.payload) return state;
++
++      return {
++        ...state,
++        filter: action.payload,
++        filteredPokemons: Array.from(state.pokemons.values()).filter(
++          filterByName(action.payload)
++        ),
++      };
++    case "SELECT_POKEMON":
++      if (!action.payload) return state;
++
++      return {
++        ...state,
++        selectedPokemons: [...state.selectedPokemons, action.payload]
++      };
++    case "PAGINATE":
++      if (!action.payload) return state;
++
++      return {
++        ...state,
++        pagination: {
++          ...state.pagination,
++          ...action.payload,
++        },
++      };
++    default:
++      throw new Error("Uh oh! This action type was not accounted for!");
++  }
++};
++
++export default PokemonReducer;
+diff --git a/src/main.tsx b/src/main.tsx
+index 3d7150d..04b64f4 100644
+--- a/src/main.tsx
++++ b/src/main.tsx
+@@ -1,6 +1,7 @@
+ import React from 'react'
+ import ReactDOM from 'react-dom/client'
+-import App from './App.tsx'
++import App from './app.tsx'
++
+ import './index.css'
+ 
+ ReactDOM.createRoot(document.getElementById('root')!).render(
+diff --git a/src/pages/details.tsx b/src/pages/details.tsx
+new file mode 100644
+index 0000000..a3355f7
+--- /dev/null
++++ b/src/pages/details.tsx
+@@ -0,0 +1,14 @@
++import { useParams } from "react-router-dom";
++
++function DetailsPage() {
++  const primaryPokemon = useParams<{ name: string }>().name;
++
++  return (
++    <main>
++      <div>Details Page</div>
++      <h1>{primaryPokemon}</h1>
++    </main>
++  );
++}
++
++export default DetailsPage;
+diff --git a/src/pages/list.tsx b/src/pages/list.tsx
+new file mode 100644
+index 0000000..9cdb070
+--- /dev/null
++++ b/src/pages/list.tsx
+@@ -0,0 +1,17 @@
++import { Header } from "@components/header/header";
++import PokemonList from "@components/pokemonList/pokemonList";
++
++function ListPage() {
++  return (
++    <>
++      <div id='container'>
++        <Header />
++        <div id='pokemonList'>
++          <PokemonList />
++        </div>
++      </div>
++    </>
++  );
++}
++
++export default ListPage;
+diff --git a/tsconfig.json b/tsconfig.json
+index a7fc6fb..062ae8f 100644
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -5,20 +5,24 @@
+     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+     "module": "ESNext",
+     "skipLibCheck": true,
+-
+-    /* Bundler mode */
+-    "moduleResolution": "bundler",
++    "moduleResolution": "Bundler",
+     "allowImportingTsExtensions": true,
+     "resolveJsonModule": true,
+     "isolatedModules": true,
+     "noEmit": true,
+     "jsx": "react-jsx",
+-
+-    /* Linting */
++    "baseUrl": ".",
+     "strict": true,
+     "noUnusedLocals": true,
+     "noUnusedParameters": true,
+-    "noFallthroughCasesInSwitch": true
++    "noFallthroughCasesInSwitch": true,
++    "paths": {
++      "@api/*": ["src/api/*"],
++      "@constants/*": ["src/constants/*"],
++      "@components/*": ["src/components/*"],
++      "@contexts/*": ["src/contexts/*"],
++      "@pages/*": ["src/pages/*"]
++    }
+   },
+   "include": ["src"],
+   "references": [{ "path": "./tsconfig.node.json" }]
+diff --git a/vite.config.ts b/vite.config.ts
+index 5a33944..9ebea55 100644
+--- a/vite.config.ts
++++ b/vite.config.ts
+@@ -1,7 +1,17 @@
+-import { defineConfig } from 'vite'
+-import react from '@vitejs/plugin-react'
++import { defineConfig } from "vite";
++import path from "path";
++import react from "@vitejs/plugin-react-swc";
+ 
+ // https://vitejs.dev/config/
+ export default defineConfig({
+   plugins: [react()],
+-})
++  resolve: {
++    alias: {
++      "@api": path.resolve(__dirname, "src/api"),
++      "@constants": path.resolve(__dirname, "src/constants"),
++      "@components": path.resolve(__dirname, "src/components"),
++      "@contexts": path.resolve(__dirname, "src/contexts"),
++      "@pages": path.resolve(__dirname, "src/pages"),
++    },
++  },
++});

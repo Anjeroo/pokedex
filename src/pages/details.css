@@ -1,0 +1,49 @@
+.pokemonBasic {
+    display: flex;
+    width: 350px;
+    height: 500px;
+    margin: auto;
+    flex-direction: column;
+    
+    background-color: rgb(187, 187, 175);
+    padding: 20px;
+    border-radius: 20px;
+    text-transform: capitalize;
+}
+
+.pokemonTitle {
+    font-size: 35px;
+    padding: 0;
+}
+
+.pokemonDetails {
+    display: flex;
+    margin: auto;
+    user-select: none;
+}
+
+.baseStats {
+    margin: auto;
+    background-color: rgb(187, 187, 175);
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.ulStats {
+    list-style: none;
+    font-size: 30px;
+}
+
+.baseTitle {
+    font-size: 40px;
+}
+
+#details {
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+    text-decoration: underline;
+}
