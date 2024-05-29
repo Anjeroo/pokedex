@@ -208,3 +208,12 @@
 #pokemonListTitle {
     text-align: center;
 }
+
+.button {
+    display: flex;
+    margin: auto;
+    border-radius: 10px;
+    height: 45px;
+    width: 150px;
+    cursor: pointer;
+}

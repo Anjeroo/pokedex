@@ -5,9 +5,9 @@ function ListPage() {
   return (
     <>
       <div id='container'>
-        <Header />
+        <Header/>
         <div id='pokemonList'>
-          <PokemonList />
+          <PokemonList/>
         </div>
       </div>
     </>

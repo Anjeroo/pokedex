@@ -1,11 +1,9 @@
 import { useMemo } from "react";
 import './pokemonList.css'
 import { DETAILS_PAGE } from "@constants/routing.constants";
-
 import { usePokemon } from "@contexts/pokemon/pokemon.provider";
-import InfiniteScroll from "@components/infiniteScroll";
 
-interface PokemonListProps {}
+interface PokemonListProps {search: string,}
 
 const PokemonList: React.FC<PokemonListProps> = () => {
   const {
@@ -46,8 +44,11 @@ const PokemonList: React.FC<PokemonListProps> = () => {
           </li>
         </a>
         ))}
-        <InfiniteScroll onIntersect={onIntersect} />
       </ul>
+      <button className="button" onClick={() => loadPokemons({
+          limit: pagination.limit,
+          offset: isInitial ? 0 : pagination.offset + pagination.limit,
+        })}>Carregar mais pokemons</button>
     </div>
   );
 };

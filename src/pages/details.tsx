@@ -6,6 +6,12 @@ function DetailsPage() {
   const primaryPokemon = useParams<{ name: string }>().name!;
   const { state: { pokemons } } = usePokemon()
   const pokemon = pokemons.get(primaryPokemon)
+  if (!pokemon) {
+    return(
+      <p style={{"textAlign": "center", "width": "100%"}}>Pokemon não existe</p>
+    )
+  }
+  
   return (
     <main>
       <div id="details">Details</div>
